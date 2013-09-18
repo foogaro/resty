@@ -1,19 +1,16 @@
-RESTY
-=====
+#RESTY
 
-REST Server
-
-What is it? Or what is not?
+##What is it? Or what is not?
 ---------------------------
 
-Resty is a HTTP Server which is not a NGNiX or Apache HTTP clone, and is not even a Tomcat HTTP Servlet Container.
+Resty is a HTTP Server which is not a NGInX or Apache HTTP clone, and is not even a Tomcat HTTP Servlet Container.
 Resty is just new approach for serving resources.
 Flexible, extensible, just new.
 It's an idea, maybe a bad idea... who konws.
 It's written in Java... I might switch to Scala.
 
 
-How it works
+##How it works
 ------------
 
 You deploy ROAR files, which are Rest Oriented ARchive.
@@ -25,8 +22,8 @@ Each descriptor can describe one or more resource. Each resource is described in
 Here is an example of a descriptor file:
 
 
-test.json
----------
+**_test.json_**
+
 ```
 {"app":"test",
 "root-path":"/myroar",
@@ -43,8 +40,8 @@ test.json
 ```
 
 
-resource.json
--------------
+**_resource.json_**
+
 ```
 {"name":"cities",
 "value":
@@ -58,8 +55,8 @@ resource.json
 }
 ```
 
-Person.java
------------
+**_Person.java_**
+
 ```
 public class Person {
 	private String name;
@@ -71,8 +68,8 @@ public class Person {
 }
 ```
 
-Location.java
--------------
+**_Location.java_**
+
 ```
 public class Location {
 	private String city;
