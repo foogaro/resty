@@ -1,4 +1,4 @@
-resty
+RESTY
 =====
 
 REST Server
@@ -27,7 +27,7 @@ Here is an example of a descriptor file:
 
 test.json
 ---------
-
+//
 {"app":"test",
 "root-path":"/myroar",
 "resource":[
