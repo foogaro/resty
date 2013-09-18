@@ -1,6 +1,6 @@
 #RESTY
 
-##What is it? Or what is not?
+##What is it? Or better, what is not?
 
 Resty is a HTTP Server which is not a NGInX or Apache HTTP clone, and is not even a Tomcat HTTP Servlet Container.
 Resty is just new approach for serving resources.
