@@ -46,16 +46,16 @@ test.json
 resource.json
 -------------
 
-/{"name":"cities",
-/"value":
-/	{"responder":"com.foogaro.resty.adapter.responder.MySQL",
-/	"query":"SELECT * FROM TBL_USERS"
-/	"mapping":{"COLUMN_AGE":"age","COLUMN_SEX":"gender","COLUMN_LOCATION":"location"}
-/	"return":"com.foogaro.resty.test.data.Person",
-/	"content-type":["application/xml","application/json"]
-/	}
-/	
-/}
+{"name":"cities",
+"value":
+	{"responder":"com.foogaro.resty.adapter.responder.MySQL",
+	"query":"SELECT * FROM TBL_USERS"
+	"mapping":{"COLUMN_AGE":"age","COLUMN_SEX":"gender","COLUMN_LOCATION":"location"}
+	"return":"com.foogaro.resty.test.data.Person",
+	"content-type":["application/xml","application/json"]
+	}
+	
+}
 
 
 Person.java
