@@ -27,7 +27,7 @@ Here is an example of a descriptor file:
 
 test.json
 ---------
-
+```
 {"app":"test",
 "root-path":"/myroar",
 "resource":[
@@ -40,12 +40,12 @@ test.json
 	},
 	{"import":"/my/cool/resource.json"}]
 }
-
+```
 
 
 resource.json
 -------------
-
+```
 {"name":"cities",
 "value":
 	{"responder":"com.foogaro.resty.adapter.responder.MySQL",
@@ -56,11 +56,11 @@ resource.json
 	}
 	
 }
-
+```
 
 Person.java
 -----------
-
+```
 public class Person {
 	private String name;
 	private String gender;
@@ -69,17 +69,17 @@ public class Person {
 
 	// getters and setters...
 }
-
+```
 
 Location.java
 -------------
-
+```
 public class Location {
 	private String city;
 	private String state;
 
 	//getters and setters...
 }
-
+```
 The descriptor is a JSON file... more info are coming!
 
