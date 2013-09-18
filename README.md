@@ -1,7 +1,6 @@
 #RESTY
 
 ##What is it? Or what is not?
----------------------------
 
 Resty is a HTTP Server which is not a NGInX or Apache HTTP clone, and is not even a Tomcat HTTP Servlet Container.
 Resty is just new approach for serving resources.
@@ -11,7 +10,6 @@ It's written in Java... I might switch to Scala.
 
 
 ##How it works
-------------
 
 You deploy ROAR files, which are Rest Oriented ARchive.
 These files are unpacked as normal WAR or EAR in memory, not the HEAP though.
@@ -24,7 +22,7 @@ Here is an example of a descriptor file:
 
 **_test.json_**
 
-```
+``` JSON
 {"app":"test",
 "root-path":"/myroar",
 "resource":[
@@ -42,7 +40,7 @@ Here is an example of a descriptor file:
 
 **_resource.json_**
 
-```
+``` JSON
 {"name":"cities",
 "value":
 	{"responder":"com.foogaro.resty.adapter.responder.MySQL",
@@ -57,7 +55,7 @@ Here is an example of a descriptor file:
 
 **_Person.java_**
 
-```
+``` Java
 public class Person {
 	private String name;
 	private String gender;
@@ -70,7 +68,7 @@ public class Person {
 
 **_Location.java_**
 
-```
+``` Java
 public class Location {
 	private String city;
 	private String state;
