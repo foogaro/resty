@@ -81,6 +81,7 @@ The descriptor is a JSON file... more info are coming!
 ##Content aggregation
 
 Suppose you have 2 different resources, one to get a city and the other one to get city's state/country (I know, but it's just an example), and you want to have all information as one result (city's name and city's country name), what you can do is to define/deploy a new resource which interacts with both resources to aggregate/mix the content and give you the result you want.
+
 I'll show you.
 
 **_city.json_**
