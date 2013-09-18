@@ -78,3 +78,62 @@ public class Location {
 ```
 The descriptor is a JSON file... more info are coming!
 
+##Content aggregation
+
+Suppose you have 2 different resources, one to get a city and the other one to get city's state/country (I know, but it's just an example), and you want to have all information as one result (city's name and city's country name), what you can do is to define/deploy a new resource which interacts with both resources to aggregate/mix the content and give you the result you want.
+I'll show you.
+
+**_city.json_**
+
+``` JSON
+{"name":"city",
+"value":
+        {"responder":"com.foogaro.resty.adapter.responder.MySQL",
+        "query":"SELECT * FROM TBL_CITY",
+	"input": {"NAME":"Rome"}
+        "return":"com.foogaro.resty.test.data.City",
+        "content-type":["application/xml","application/json"]
+        }
+
+}
+```
+
+**_country.json_**
+
+``` JSON
+{"name":"country",
+"value":
+        {"responder":"com.foogaro.resty.adapter.responder.MySQL",
+        "query":"SELECT * FROM TBL_COUNTRY",
+        "input": {"CITY_NAME":"Rome"}
+        "return":"com.foogaro.resty.test.data.Country",
+        "content-type":["application/xml","application/json"]
+        }
+
+}
+```
+
+**_mixing-city-country.json_**
+
+``` JSON
+{"name":"cityCountry",
+"value":
+	{"responder":"com.foogaro.resty.adapter.responder.Resource",
+	"input":[
+		{"resource":"city","input":{"NAME":"Rome"},
+		"resource":"country","input":{"CITY_NAME":"Rome"}
+		]},
+	"return":{"resources": [
+			{"resource":"city","get":"name"},
+			{"resource":"country","get":"name"}],
+		"separator":" - "
+		}
+	}
+}
+
+```
+
+The result would be:
+"Rome - Italy"
+
+All you had to do was deploy a ROAR with the *mixing-city-country.json* resource file.
